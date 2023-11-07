@@ -24,7 +24,7 @@ li.pro-menu-item{
 span.pro-item-content{
   display: flex;
   flex-direction: row; 
-  width: 60%;
+  width: 65%;
   color: '#6C89A4';
   font-family: 'Poppins', sans-serif;
 } 
