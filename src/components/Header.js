@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { styled,  } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import AddCircleIcon from '@mui/icons-material/AddCircle'; 
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Backarrow from '../assets/backarrow.png';
-import Chat from '../assets/chat.png';
-import Notification from '../assets/notification.png';
-import Logout from '../assets/logout.png';
+import Backarrow from '../assets/images/backarrow.png';
+import Chat from '../assets/images/chat.png';
+import Notification from '../assets/images/notification.png';
+import Logout from '../assets/images/logout.png';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -34,7 +34,7 @@ const SearchIconWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color:"#0A3A67"
+  color: "#0A3A67"
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
@@ -50,152 +50,197 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
-  export default function PrimarySearchAppBar() {
-      return (
-    <Box sx={{ flexGrow: 0 }}>
-      <div className='main-div'
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          flexWrap: "wrap"
-        }}
-      > 
-        <div
-          style={{
-            backgroundColor: "white",
-            width: "35px",
-            height: "35px",
-            borderRadius: "5px",
-            marginLeft: "10px",
+export default function PrimarySearchAppBar() {
+  return (
+    <Box sx={{
+      marginLeft:"12rem",
+    }}display="block" right={0} width="85%">
+      <Box sx={{ flexGrow: 0 }}>
+        <Box
+          className="main-div"
+          sx={{
+            // width: '70%',
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap", 
+            // justifyContent: "right"
           }}
         >
-          <img
-            src={Backarrow}
-            alt=""
-            style={{
-              width: "18px",
-              height: "20px",
-              paddingTop: "8px",
-              paddingLeft: "9px",
-              alignItems: "center",
-            }}
-          />
-        </div> 
-        <div>
-        <Search>
-          <SearchIconWrapper>
-            <SearchIcon />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search clients, properties, services"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search> 
-        </div>
-        <div>
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#0A3A67",
-            width: "150px",
-            height: "40px",
-            borderRadius: "5px",
-          }}
-        >
-          <AddCircleIcon></AddCircleIcon>
-          ADD
-        </Button> 
-        </div>
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
-          <div
-            style={{
-              backgroundColor: "white", 
-              width: "35px", 
-              height: "35px", 
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center", 
-              borderRadius: "5px",
-              marginLeft: "20px",
-            }}
-          >
-            <img
-              src={Chat}
-              alt=""
-              style={{
-                width: "25px",
-                height: "25px",
-                alignItems: "center",
-              }}
-            />
-          </div>
-          <div
-            style={{
-              backgroundColor: "white", 
-              width: "35px", 
+          <Box
+            sx={{
+              backgroundColor: "white",
+              width: "35px",
               height: "35px",
-              display: "inline-flex", 
-              alignItems: "center", 
-              justifyContent: "center", 
               borderRadius: "5px",
-              marginLeft: "20px",
+              marginLeft: "10px",
+              "&:hover": {
+                width: "35px",
+                height: "35px",
+                backgroundColor: ' #D3D3D3',
+                cursor: 'pointer',
+                WebkitTransition: '.3s ease-in-out',
+                transition: '.3s ease-in-out'
+              },
             }}
           >
             <img
-              src={Notification}
+              src={Backarrow}
               alt=""
               style={{
                 width: "18px",
                 height: "20px",
+                paddingTop: "8px",
+                paddingLeft: "9px",
                 alignItems: "center",
               }}
             />
-          </div>
-          <div
+          </Box>
+          <Box>
+            <Search>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search clients, properties, services"
+                inputProps={{
+                  style: { fontStyle: "italic" },
+                  "aria-label": "search",
+                }}
+              />
+            </Search>
+          </Box>
+          <Box>
+            <Button
+              variant="contained"
+              style={{
+                backgroundColor: "#0A3A67",
+                width: "150px",
+                height: "40px",
+                borderRadius: "5px",
+              }}
+            >
+              <AddCircleIcon></AddCircleIcon>
+              ADD
+            </Button>
+          </Box>
+          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            <Box
+              sx={{
+                backgroundColor: "white",
+                width: "35px",
+                height: "35px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "5px",
+                marginLeft: "20px",
+                "&:hover": {
+                  width: "35px",
+                  height: "35px",
+                  backgroundColor: ' #D3D3D3',
+                  cursor: 'pointer',
+                  WebkitTransition: '.3s ease-in-out',
+                  transition: '.3s ease-in-out'
+                },
+              }}
+            >
+              <img
+                src={Chat}
+                alt=""
+                style={{
+                  width: "25px",
+                  height: "25px",
+                  alignItems: "center",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                backgroundColor: "white",
+                width: "35px",
+                height: "35px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "5px",
+                marginLeft: "20px",
+                "&:hover": {
+                  width: "35px",
+                  height: "35px",
+                  backgroundColor: ' #D3D3D3',
+                  cursor: 'pointer',
+                  WebkitTransition: '.3s ease-in-out',
+                  transition: '.3s ease-in-out'
+                },
+              }}
+            >
+              <img
+                src={Notification}
+                alt="notification"
+                style={{
+                  width: "18px",
+                  height: "20px",
+                  alignItems: "center",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                backgroundColor: "white",
+                width: "35px",
+                height: "35px",
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "5px",
+                marginLeft: "20px",
+                "&:hover": {
+                  width: "35px",
+                  height: "35px",
+                  backgroundColor: ' #D3D3D3',
+                  cursor: 'pointer',
+                  WebkitTransition: '.3s ease-in-out',
+                  transition: '.3s ease-in-out'
+                },
+              }}
+            >
+              <img
+                src={Logout}
+                alt=""
+                style={{
+                  width: "20px",
+                  height: "25px",
+                  alignItems: "center",
+                }}
+              />
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            backgroundColor: "white",
+            width: "76%",
+            height: "60px",
+            margin: "20px auto 20px 177px ",
+            borderRadius: "5px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "left",
+          }}
+        >
+          <p
             style={{
-              backgroundColor: "white", 
-              width:"35px",
-              height: "35px", 
-              display: "inline-flex", 
-              alignItems: "center", 
-              justifyContent: "center",
-              borderRadius: "5px",
-              marginLeft: "20px",
+              paddingLeft: "20px",
+              color: "#0A3A67",
             }}
           >
-            <img
-              src={Logout}
-              alt=""
-              style={{
-                width: "20px",
-                height: "25px",
-                alignItems: "center",
-              }}
-            />
-          </div>
-        </Box>
-      </div>
-     <Box 
-  style={{
-    backgroundColor: 'white',
-    width: '60%',
-    height: '60px',
-    margin: '20px auto', 
-    borderRadius: '5px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'left', 
-  }}
->
-    <p 
-    style={{
-        paddingLeft: '20px',
-        color: "#0A3A67"
-    }}>Investment</p>
-</Box>
+            Investment
+          </p> 
+        </Box> 
+      </Box>
     </Box>
   );
 }
 
-  
-  
+
+

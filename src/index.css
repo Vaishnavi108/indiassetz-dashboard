@@ -17,3 +17,28 @@ body{
   font-family: 'Poppins', sans-serif;
 }
  
+li.pro-menu-item{
+  list-style: none; 
+  margin-left: 25px;
+} 
+span.pro-item-content{
+  display: flex;
+  flex-direction: row; 
+  width: 65%;
+  color: '#6C89A4';
+  font-family: 'Poppins', sans-serif;
+} 
+.list-gap{
+  margin: 22px 0px 22px 0 ;
+} 
+.image{
+  margin-right: 20px;
+} 
+.container{
+  background-color: white; 
+  height: 90%;
+  border-radius: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 40px; 
+} 
