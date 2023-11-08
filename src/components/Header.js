@@ -219,7 +219,7 @@ export default function PrimarySearchAppBar() {
         <Box
           sx={{
             backgroundColor: "white",
-            width: "73%",
+            width: "76%",
             height: "60px",
             margin: "20px auto 20px 177px ",
             borderRadius: "5px",

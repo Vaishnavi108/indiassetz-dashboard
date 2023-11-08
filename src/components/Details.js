@@ -9,7 +9,7 @@ const fontStyle = {
   description: {
     fontFamily: 'Poppins, sans-serif',
     color: '#0A3A67',
-    fontWeight:"600",
+    fontWeight:"500",
     fontSize:"14px"
   },
  

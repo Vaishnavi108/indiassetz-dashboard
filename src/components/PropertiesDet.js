@@ -15,14 +15,16 @@ const PropertiesDet = () => {
             <h3 style={{
             fontFamily: 'Poppins, sans-serif',
             color: '#0A3A67',
-            fontWeight: "400",
-            fontSize: "16px"
+            fontWeight: "500",
+            fontSize: "14px",
+            paddingLeft:"10px"
             }}> Property Description </h3> 
             <p style={{
-              fontFamily:'Poppins, sans-serif',
-              color: '#0A3A67',
-            fontWeight: "200",
-            fontSize: "14px"
+            fontFamily: 'Poppins, sans-serif',
+            color: '#0A3A67',
+            fontWeight: "400",
+            fontSize: "14px", 
+            paddingLeft:"10px"
             }}> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   </p>
           </Box>
           </Box>

@@ -2,7 +2,8 @@ import Header from './components/Header';
 import Info from './components/Info'; 
 import SideNav from './components/CustomSidebar'; 
 import Details from './components/Details';
-import PropertiesDet from './components/PropertiesDet';
+import PropertiesDet from './components/PropertiesDet'; 
+import BasicTable from './components/Tabledesc';
 import React from 'react'
 import Box from '@mui/material/Box';
 
@@ -61,7 +62,8 @@ const Dashboard = () => {
             marginTop:"20px",
             marginLeft:"15px"
           }}>
-             <PropertiesDet />
+             <PropertiesDet />  
+             <BasicTable />
           </Box>
         </Box> 
     </>
