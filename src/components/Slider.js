@@ -1,4 +1,6 @@
 import { useState } from "react";
+import LeftArrow from "../assets/images/LeftArrow.png";
+import RightArroww from "../assets/images/RightArroww.png";
 
 const slideStyles = {
   width: "100%",
@@ -12,22 +14,27 @@ const rightArrowStyles = {
   position: "absolute",
   top: "50%",
   transform: "translate(0, -50%)",
-  right: "32px",
-  fontSize: "45px",
-  color: "#fff",
+  right: "-19px",
   zIndex: 1,
-  cursor: "pointer",
+  backgroundImage: `url(${RightArroww})`,
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  width: "40px",
+  height: "100px",
+  cursor: "Pointer",
 };
 
 const leftArrowStyles = {
   position: "absolute",
-  top: "50%",
+  top: "52%",
   transform: "translate(0, -50%)",
-  left: "32px",
-  fontSize: "45px",
-  color: "#fff",
   zIndex: 1,
-  cursor: "pointer",
+  backgroundImage: `url(${LeftArrow})`,
+  backgroundSize: "contain",
+  backgroundRepeat: "no-repeat",
+  width: "80px",
+  height: "100px",
+  cursor: "Pointer",
 };
 
 const sliderStyles = {
@@ -66,15 +73,11 @@ const Carousel = ({ slides }) => {
     backgroundImage: `url(${slides[currentIndex].url})`,
   };
 
-  return ( 
+  return (
     <div style={sliderStyles}>
       <div>
-        <div onClick={goToPrevious} style={leftArrowStyles}>
-          ❰
-        </div>
-        <div onClick={goToNext} style={rightArrowStyles}>
-          ❱
-        </div>
+        <div onClick={goToPrevious} style={leftArrowStyles}></div>
+        <div onClick={goToNext} style={rightArrowStyles}></div>
       </div>
       <div style={slideStylesWidthBackground}></div>
       <div style={dotsContainerStyles}>
@@ -83,9 +86,7 @@ const Carousel = ({ slides }) => {
             style={dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
-          >
-            
-          </div>
+          ></div>
         ))}
       </div>
     </div>

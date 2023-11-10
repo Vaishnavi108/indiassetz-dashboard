@@ -1,60 +1,65 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
-import Backarrow from '../assets/images/backarrow.png';
-import Chat from '../assets/images/chat.png';
-import Notification from '../assets/images/notification.png';
-import Logout from '../assets/images/logout.png';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import InputBase from "@mui/material/InputBase";
+import SearchIcon from "@mui/icons-material/Search";
+import Backarrow from "../assets/images/backarrow.png";
+import Chat from "../assets/images/chat.png";
+import Notification from "../assets/images/notification.png";
+import Logout from "../assets/images/logoutt.png";
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: '#ffffff',
-  '&:hover': {
-    backgroundColor: '#ffffff',
+  backgroundColor: "#ffffff",
+  "&:hover": {
+    backgroundColor: "#ffffff",
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
-    width: '60ch',
+    width: "60ch",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: "#0A3A67"
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  color: "#0A3A67",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: '#0A3A67',
-  '& .MuiInputBase-input': {
+  color: "#0A3A67",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '60ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "60ch",
     },
   },
 }));
 export default function PrimarySearchAppBar() {
   return (
-    <Box sx={{
-      marginLeft:"12rem",
-    }}display="block" right={0} width="85%">
+    <Box
+      sx={{
+        marginLeft: "12rem",
+      }}
+      display="block"
+      right={0}
+      width="85%"
+    >
       <Box sx={{ flexGrow: 0 }}>
         <Box
           className="main-div"
@@ -62,24 +67,24 @@ export default function PrimarySearchAppBar() {
             // width: '70%',
             display: "flex",
             justifyContent: "center",
-            flexWrap: "wrap", 
+            flexWrap: "wrap",
             // justifyContent: "right"
           }}
         >
           <Box
             sx={{
               backgroundColor: "white",
-              width: "35px",
-              height: "35px",
+              width: "38px",
+              height: "38px",
               borderRadius: "5px",
               marginLeft: "10px",
               "&:hover": {
-                width: "35px",
-                height: "35px",
-                backgroundColor: ' #D3D3D3',
-                cursor: 'pointer',
-                WebkitTransition: '.3s ease-in-out',
-                transition: '.3s ease-in-out'
+                width: "38px",
+                height: "38px",
+                backgroundColor: " #D3D3D3",
+                cursor: "pointer",
+                WebkitTransition: ".3s ease-in-out",
+                transition: ".3s ease-in-out",
               },
             }}
           >
@@ -87,9 +92,9 @@ export default function PrimarySearchAppBar() {
               src={Backarrow}
               alt=""
               style={{
-                width: "18px",
-                height: "20px",
-                paddingTop: "8px",
+                width: "20px",
+                height: "22px",
+                paddingTop: "9px",
                 paddingLeft: "9px",
                 alignItems: "center",
               }}
@@ -137,10 +142,10 @@ export default function PrimarySearchAppBar() {
                 "&:hover": {
                   width: "35px",
                   height: "35px",
-                  backgroundColor: ' #D3D3D3',
-                  cursor: 'pointer',
-                  WebkitTransition: '.3s ease-in-out',
-                  transition: '.3s ease-in-out'
+                  backgroundColor: " #D3D3D3",
+                  cursor: "pointer",
+                  WebkitTransition: ".3s ease-in-out",
+                  transition: ".3s ease-in-out",
                 },
               }}
             >
@@ -148,8 +153,8 @@ export default function PrimarySearchAppBar() {
                 src={Chat}
                 alt=""
                 style={{
-                  width: "25px",
-                  height: "25px",
+                  width: "27px",
+                  height: "27px",
                   alignItems: "center",
                 }}
               />
@@ -167,10 +172,10 @@ export default function PrimarySearchAppBar() {
                 "&:hover": {
                   width: "35px",
                   height: "35px",
-                  backgroundColor: ' #D3D3D3',
-                  cursor: 'pointer',
-                  WebkitTransition: '.3s ease-in-out',
-                  transition: '.3s ease-in-out'
+                  backgroundColor: " #D3D3D3",
+                  cursor: "pointer",
+                  WebkitTransition: ".3s ease-in-out",
+                  transition: ".3s ease-in-out",
                 },
               }}
             >
@@ -178,15 +183,15 @@ export default function PrimarySearchAppBar() {
                 src={Notification}
                 alt="notification"
                 style={{
-                  width: "18px",
-                  height: "20px",
+                  width: "16px",
+                  height: "21px",
                   alignItems: "center",
                 }}
               />
             </Box>
             <Box
               sx={{
-                backgroundColor: "white",
+                backgroundColor: "rgba(255, 255, 255, 1)",
                 width: "35px",
                 height: "35px",
                 display: "inline-flex",
@@ -197,10 +202,10 @@ export default function PrimarySearchAppBar() {
                 "&:hover": {
                   width: "35px",
                   height: "35px",
-                  backgroundColor: ' #D3D3D3',
-                  cursor: 'pointer',
-                  WebkitTransition: '.3s ease-in-out',
-                  transition: '.3s ease-in-out'
+                  backgroundColor: " #D3D3D3",
+                  cursor: "pointer",
+                  WebkitTransition: ".3s ease-in-out",
+                  transition: ".3s ease-in-out",
                 },
               }}
             >
@@ -208,8 +213,8 @@ export default function PrimarySearchAppBar() {
                 src={Logout}
                 alt=""
                 style={{
-                  width: "20px",
-                  height: "25px",
+                  width: "17px",
+                  height: "17px",
                   alignItems: "center",
                 }}
               />
@@ -235,12 +240,9 @@ export default function PrimarySearchAppBar() {
             }}
           >
             Investment
-          </p> 
-        </Box> 
+          </p>
+        </Box>
       </Box>
     </Box>
   );
 }
-
-
-
