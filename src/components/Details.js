@@ -1,4 +1,5 @@
 import Box from "@mui/material/Box";
+import { useTheme } from "@mui/system";
 const fontStyle = {
   heading: {
     fontFamily: "Poppins, sans-serif",
@@ -15,6 +16,7 @@ const fontStyle = {
 };
 
 function Details({ inputData }) {
+  const theme = useTheme();
   return (
     <>
       <Box
@@ -22,9 +24,12 @@ function Details({ inputData }) {
           border: "2px solid rgba(10, 58, 103, 0.3)",
           borderRadius: "20px",
           marginTop: "20px",
-          width: "60%",
+          width: "45%",
           height: "80px",
           marginLeft: "20px",
+          [theme.breakpoints.down("md")]: {
+            width: "90%",
+          },
         }}
       >
         <Box

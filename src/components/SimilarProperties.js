@@ -6,6 +6,8 @@ import PropertyThree from "../assets/images/propertyThree.png";
 import Box from "@mui/material/Box";
 import Calendar from "../assets/images/Cal.png";
 import Location from "../assets/images/Loc.png";
+import { useTheme } from "@mui/system";
+import { useMediaQuery } from "@mui/material";
 
 const fontStyle = {
   heading: {
@@ -45,7 +47,7 @@ function captionTwo() {
         marginTop: "-263px",
         backgroundColor: "white",
         display: "flex",
-        position: "absolute",
+        position: "absolute", 
       }}
     >
       <p
@@ -64,6 +66,7 @@ function captionTwo() {
 }
 
 function PropDetails() {
+  const theme = useTheme();
   return (
     <Box>
       <Box
@@ -78,6 +81,9 @@ function PropDetails() {
           borderBottomLeftRadius: "20px",
           borderBottomRightRadius: "20px",
           backdropFilter: "blur(40px)",
+          [theme.breakpoints.down("md")]: {
+            width: "185px",
+          },
         }}
       >
         {PropertiesInfo.map((item, index) => (
@@ -152,6 +158,9 @@ function PropDetails() {
                   style={{
                     height: "30px",
                     marginTop: "8px",
+                    [theme.breakpoints.down("md")]: {
+                      paddingRight: "10px",
+                    },
                   }}
                   src={item.vectorTwo}
                   alt="Location"
@@ -174,6 +183,9 @@ function PropDetails() {
 }
 
 const InfoTwo = () => {
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
+
   const slides = [
     { url: Property, title: "Villa" },
     { url: PropertyOne, title: "Villa" },
@@ -210,7 +222,11 @@ const InfoTwo = () => {
     margin: "10px 0 0 0",
     paddingLeft: "15px",
   };
-  const itemsPerSlide = 4;
+  const itemsPerSlide = isMediumScreen ? 4 : 3;
+  if (itemsPerSlide === 2) {
+    containerStyles.width = "50%"; // Adjust as needed
+  }
+
   return (
     <Box
       sx={{

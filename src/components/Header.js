@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
-import Box from "@mui/material/Box";
+import { Box, useMediaQuery } from "@mui/material";
 import Button from "@mui/material/Button";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import InputBase from "@mui/material/InputBase";
@@ -9,6 +9,7 @@ import Backarrow from "../assets/images/backarrow.png";
 import Chat from "../assets/images/chat.png";
 import Notification from "../assets/images/notification.png";
 import Logout from "../assets/images/logoutt.png";
+import { useTheme } from "@mui/system";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -23,6 +24,10 @@ const Search = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(3),
     width: "60ch",
+  },
+  [theme.breakpoints.down("md")]: {
+    width: "390px",
+    marginRight: "-60px",
   },
 }));
 
@@ -51,10 +56,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 export default function PrimarySearchAppBar() {
+  const theme = useTheme();
   return (
     <Box
       sx={{
         marginLeft: "12rem",
+        position: "static",
       }}
       display="block"
       right={0}
@@ -69,15 +76,26 @@ export default function PrimarySearchAppBar() {
             justifyContent: "center",
             flexWrap: "wrap",
             // justifyContent: "right"
+            [theme.breakpoints.down("md")]: {
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexFlow: "row wrap",
+            },
           }}
         >
           <Box
+            className="backarrow"
             sx={{
               backgroundColor: "white",
               width: "38px",
               height: "38px",
               borderRadius: "5px",
               marginLeft: "10px",
+              [theme.breakpoints.down("md")]: {
+                marginLeft: "-140px",
+                marginBottom: "20px",
+              },
+
               "&:hover": {
                 width: "38px",
                 height: "38px",
@@ -128,7 +146,7 @@ export default function PrimarySearchAppBar() {
               ADD
             </Button>
           </Box>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "flex", md: "flex" } }}>
             <Box
               sx={{
                 backgroundColor: "white",
@@ -169,6 +187,7 @@ export default function PrimarySearchAppBar() {
                 justifyContent: "center",
                 borderRadius: "5px",
                 marginLeft: "20px",
+
                 "&:hover": {
                   width: "35px",
                   height: "35px",
@@ -231,6 +250,10 @@ export default function PrimarySearchAppBar() {
             display: "flex",
             alignItems: "center",
             justifyContent: "left",
+            [theme.breakpoints.down("md")]: {
+              width: "620px",
+              marginLeft: "-200px",
+            },
           }}
         >
           <p
