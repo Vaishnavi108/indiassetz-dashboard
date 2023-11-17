@@ -7,6 +7,7 @@ import BasicTable from "./components/Tabledesc";
 import SimilarProperty from "./components/SimilarProperties";
 import React from "react";
 import Box from "@mui/material/Box";
+import { useTheme } from "@mui/system";
 
 const itemsWithHeadingAndDescriptionTwo = [
   { heading: "Bedrooms", description: "2" },
@@ -21,9 +22,11 @@ const itemsWithHeadingAndDescriptionThree = [
 ];
 
 const Dashboard = () => {
+  const theme = useTheme();
+
   return (
     <>
-      <Header />
+      <Header/>
       <SideNav />
       <Box
         sx={{
@@ -32,6 +35,11 @@ const Dashboard = () => {
           height: "1406px",
           marginLeft: "23rem",
           borderRadius: "5px",
+          [theme.breakpoints.down("md")]: {
+            width: "610px",
+            marginLeft: "-4px",
+            height: "1850px",
+          },
         }}
       >
         <p
@@ -48,7 +56,7 @@ const Dashboard = () => {
         <Box
           sx={{
             display: "flex",
-            flexWrap: "nowrap",
+            flexFlow: "row wrap",
             justifyContent: "space-evenly",
             marginRight: "20px",
             marginTop: "10px",

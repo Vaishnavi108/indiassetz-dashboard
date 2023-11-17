@@ -1,7 +1,8 @@
 import Section from "./Slider";
 import Prestigeone from "../assets/images/prestigeone.png";
 import Prestigetwo from "../assets/images/prestigetwo.jpg";
-import Box from "@mui/material/Box";
+import { Box, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/system";
 
 const itemsWithHeadingAndDescription = [
   { heading: "Property Category", description: "Residential" },
@@ -34,6 +35,7 @@ const fontStyle = {
 };
 
 const Info = () => {
+  const theme = useTheme();
   const slides = [
     { url: Prestigeone, title: "prestige" },
     { url: Prestigetwo, title: "boat" },
@@ -41,59 +43,66 @@ const Info = () => {
   const containerStyles = {
     width: "460px",
     height: "310px",
-    margin: "0 0 0 20",
+    margin: "0 0 0 20px",
     paddingLeft: "20px",
   };
   return (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "nowrap",
-        }}
-      >
-        <Box>
-          <div style={containerStyles}>
-            <Section slides={slides} />
-          </div>
-        </Box>
+    <>
+      <Box>
         <Box
           sx={{
-            border: "2px solid rgba(10, 58, 103, 0.3)",
-            borderRadius: "30px",
-            marginLeft: "70px",
-            width: "340px",
-            height: "315px",
+            display: "flex",
+            flexFlow: "row wrap",
+            [theme.breakpoints.down("md")]: {
+              justifyContent: "center",
+              marginRight: "40px",
+            },
           }}
         >
-          {itemsWithHeadingAndDescription.map((item, index) => (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginLeft: "15px",
-                height: "27px",
-                width: "90%",
-                justifyContent: "space-between",
-                marginTop: "-2px",
-                // marginBottom: "3px",
-              }}
-              key={index}
-            >
-              <h2 style={fontStyle.heading}>{item.heading}</h2>
-              <p style={fontStyle.description}>{item.description}</p>
+          <Box>
+            <div style={containerStyles}>
+              <Section slides={slides} />
             </div>
-          ))}
+          </Box>
+          <Box
+            sx={{
+              border: "2px solid rgba(10, 58, 103, 0.3)",
+              borderRadius: "30px",
+              marginLeft: "70px",
+              width: "340px",
+              height: "315px",
+              [theme.breakpoints.down("md")]: {
+                marginTop: "20px",
+                width: "550px",
+                paddingLeft: "10px",
+                marginLeft: "30px",
+              },
+            }}
+          >
+            {itemsWithHeadingAndDescription.map((item, index) => (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  marginLeft: "15px",
+                  height: "27px",
+                  width: "90%",
+                  justifyContent: "space-between",
+                  marginTop: "-2px",
+                  [theme.breakpoints.down("md")]: {
+                    marginRight: "-20px",
+                  },
+                }}
+                key={index}
+              >
+                <h2 style={fontStyle.heading}>{item.heading}</h2>
+                <p style={fontStyle.description}>{item.description}</p>
+              </div>
+            ))}
+          </Box>
         </Box>
       </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexWrap: "nowrap",
-          justifyContent: "space-evenly",
-        }}
-      ></Box>
-    </Box>
+    </>
   );
 };
 

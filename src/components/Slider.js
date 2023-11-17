@@ -1,12 +1,12 @@
 import { useState } from "react";
 import LeftArrow from "../assets/images/LeftArrow.png";
 import RightArroww from "../assets/images/RightArroww.png";
+import { useTheme } from "@mui/system";
 
 const slideStyles = {
   width: "100%",
   height: "100%",
   borderRadius: "10px",
-  backgroundSize: "cover",
   backgroundPosition: "center",
 };
 
@@ -54,6 +54,19 @@ const dotStyle = {
 };
 
 const Carousel = ({ slides }) => {
+  const theme = useTheme();
+
+  const slideStyles = {
+    width: "100%",
+    height: "100%",
+    borderRadius: "10px",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    [theme.breakpoints.up("xs")]: {
+      width: "500px", 
+      marginLeft:"-10px"
+    },
+  };
   const [currentIndex, setCurrentIndex] = useState(0);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
